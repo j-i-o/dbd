@@ -12,3 +12,8 @@ Algebra Relacional
 #2) Reportar nombreT, email y teléfono de talleres con nroTaller mayor a 600."
 
 π nombreT, email, telefono (σ nroTaller > 600 (TallerDBicicleta))
+
+#3)Reportar DNI, apellido, nombre de aquellos clientes atendidos en el Taller con nombre ‘Y’ o que tengan reparaciones con valor superior a 1000.
+
+π Cliente.dni, Cliente.apellido, Cliente.nombre (Cliente ⨯ (σ nombreT = 'Y' ∨ valor > 1000 (Reparacion ⨯ TallerDBicicleta)))
+#Devuelve TODOS los clientes
