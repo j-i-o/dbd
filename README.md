@@ -15,5 +15,9 @@ Algebra Relacional
 
 #3)Reportar DNI, apellido, nombre de aquellos clientes atendidos en el Taller con nombre ‘Y’ o que tengan reparaciones con valor superior a 1000.
 
-π Cliente.dni, Cliente.apellido, Cliente.nombre (Cliente ⨯ (σ nombreT = 'Y' ∨ valor > 1000 (Reparacion ⨯ TallerDBicicleta)))
-#Devuelve TODOS los clientes
+pi Cliente.dni, Cliente.apellido, Cliente.nombre (sigma Cliente.nroCte = Reparacion.nroCte (Cliente ⨯ sigma Reparacion.nroEmp = Empleado.nroEmp (Reparacion ⨯ (Empleado ⨝ sigma nombreT = 'Y' (TallerDBicicleta))))) ∪ pi Cliente.dni, Cliente.apellido, Cliente.nombre ((sigma valor > 1000 (Reparacion)) ⨝ Cliente)
+
+o
+
+
+pi Cliente.dni, Cliente.apellido, Cliente.nombre (Cliente ⨝ pi nroCte (sigma Reparacion.nroEmp = Empleado.nroEmp (Reparacion ⨯ (Empleado ⨝ sigma nombreT = 'Y' (TallerDBicicleta))))) ∪ pi Cliente.dni, Cliente.apellido, Cliente.nombre ((sigma valor > 1000 (Reparacion)) ⨝ Cliente)
