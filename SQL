@@ -1,4 +1,4 @@
-#6) Reportar DNI, apellido, nombre y fecha de nacimiento de empleados con reparaciones durante 2017. (No funca)
+#6) Reportar DNI, apellido, nombre y fecha de nacimiento de empleados con reparaciones durante 2017. (No funciona en el motor no mySQL)
 
 SELECT DISTINCT 
 	Empleado.dni, Empleado.apellido, Empleado.nombre, Empleado.fechaNac 
@@ -10,3 +10,19 @@ ON
 	Empleado.nroEmp = Reparacion.nroEmp
 WHERE
 	Reparacion.fecha LIKE '2017%'
+
+
+
+#8) Reportar talleres cuyo nombre contenga el string ‘taller’, se deberá informar nombre, direccion y
+telefono. El resultado deberá estar ordenado por nombre y dirección descendentemente. (Funciono en la página, pero sin el UPPER)
+
+select distinct 
+	nombreT, direccion, telefono 
+from 
+	TallerDBicicleta 
+where 
+	upper(nombreT) 
+like 
+	upper('%Taller%')
+order by 
+	nombreT, direccion desc
