@@ -1,0 +1,12 @@
+#6) Reportar DNI, apellido, nombre y fecha de nacimiento de empleados con reparaciones durante 2017. (No funca)
+
+SELECT DISTINCT 
+	Empleado.dni, Empleado.apellido, Empleado.nombre, Empleado.fechaNac 
+FROM 
+	Empleado
+JOIN
+	Reparacion r
+ON 
+	Empleado.nroEmp = Reparacion.nroEmp
+WHERE
+	Reparacion.fecha LIKE '2017%'
