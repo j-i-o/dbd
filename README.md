@@ -29,3 +29,9 @@ pi Cliente.dni, Cliente.apellido, Cliente.nombre (Cliente ⨝ pi nroCte (Reparac
 #4) Reportar el DNI y nombre de los empleados que no hayan participado en ningún arreglo.
 
 pi dni, nombre ((pi nroEmp (Empleado) - pi nroEmp (Reparacion)) ⨝ (Empleado))
+
+
+#5) Borrar al empleado con nroEmp: 6.
+
+#Faltaría reasignarlo a empleado con <= (no encontré como hacerlo en el engine provisto)
+Empleado - (sigma nroEmp = 6 (Empleado))
