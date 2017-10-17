@@ -8,6 +8,9 @@ Algebra Relacional
 
 π Empleado.dni, Empleado.apellido, Empleado.nombre, Empleado.fechaNac (σ Empleado.nroEmp = Reparacion.nroEmp ((σ Cliente.nroCte = Reparacion.nroCte ((σ dni > 30000000 (Cliente)) ⨯ Reparacion)) ⨯ Empleado))
 
+o
+
+π Empleado.dni, Empleado.apellido, Empleado.nombre, Empleado.fechaNac ((pi nroEmp ((σ dni > 30000000 (Cliente)) ⨝ (Reparacion))) ⨝ Empleado)
 
 
 #2) Reportar nombreT, email y teléfono de talleres con nroTaller mayor a 600."
