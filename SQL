@@ -1,3 +1,7 @@
+#5) Borrar al empleado con nroEmp: 6.
+DELETE FROM empleado
+WHERE nroEmp=6   
+
 #6) Reportar DNI, apellido, nombre y fecha de nacimiento de empleados con reparaciones durante 2017. (No funciona en el motor no mySQL)
 
 SELECT DISTINCT dni, apellido, nombre, fechaNac
