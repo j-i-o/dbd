@@ -1,4 +1,5 @@
 #5) Borrar al empleado con nroEmp: 6.
+
 DELETE FROM empleado
 WHERE nroEmp=6   
 
