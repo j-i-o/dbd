@@ -18,16 +18,10 @@ GROUP BY r.nroEmp
 #8) Reportar talleres cuyo nombre contenga el string ‘taller’, se deberá informar nombre, direccion y
 telefono. El resultado deberá estar ordenado por nombre y dirección descendentemente. (Funciono en la página, pero sin el UPPER)
 
-select distinct 
-	nombreT, direccion, telefono 
-from 
-	TallerDBicicleta 
-where 
-	upper(nombreT) 
-like 
-	upper('%Taller%')
-order by 
-	nombreT, direccion desc
+SELECT DISTINCT   nombreT, direccion, telefono
+FROM    TallerDBicicleta
+WHERE    UPPER(nombreT) LIKE UPPER('%Taller%')
+ORDER BY    nombreT, direccion DESC
 
 #9) Informar DNI, apellido y nombre de clientes con más de 5 reparaciones solicitadas.
 
