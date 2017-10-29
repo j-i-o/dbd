@@ -35,3 +35,18 @@ HAVING cantRep>5
 #10) Reportar nombre, dirección y teléfono de talleres que tengan reparaciones durante enero de 2017 y
 no tengan reparaciones durante febrero del mismo año.
 
+SELECT DISTINCT t.nombreT, t.direccion, t.nroTaller
+FROM reparacion r
+LEFT JOIN empleado e 
+ON r.nroEmp = e.nroEmp
+INNER JOIN tallerdbicicleta t 
+ON e.nroTaller = t.nroTaller
+WHERE r.fecha BETWEEN '2017-01-01' AND '2017-01-31' AND t.nombreT NOT IN(
+    SELECT DISTINCT t.nombreT
+    FROM reparacion r
+    LEFT JOIN empleado e 
+    ON r.nroEmp = e.nroEmp
+    INNER JOIN tallerdbicicleta t 
+    ON e.nroTaller = t.nroTaller
+    WHERE r.fecha BETWEEN '2017-02-01' AND '2017-02-29'
+)
