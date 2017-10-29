@@ -25,5 +25,13 @@ ORDER BY    nombreT, direccion DESC
 
 #9) Informar DNI, apellido y nombre de clientes con más de 5 reparaciones solicitadas.
 
+SELECT DISTINCT dni, apellido, nombre, COUNT(r.nroCte) AS cantRep 
+FROM cliente c 
+LEFT JOIN reparacion r 
+ON r.nroCte = c.nroCte 
+GROUP BY r.nroCte 
+HAVING cantRep>5 
+
 #10) Reportar nombre, dirección y teléfono de talleres que tengan reparaciones durante enero de 2017 y
 no tengan reparaciones durante febrero del mismo año.
+
