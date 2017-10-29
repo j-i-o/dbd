@@ -9,6 +9,12 @@ WHERE r.fecha BETWEEN '2017-01-01' AND '2017-12-31'
 #7) Reportar para cada empleado: DNI, apellido y nombre de junto con la cantidad de reparaciones
 realizadas.
 
+SELECT DISTINCT	dni, apellido, nombre, COUNT(r.nroEmp)
+FROM empleado e
+LEFT JOIN reparacion r
+ON r.nroEmp = e.nroEmp
+GROUP BY r.nroEmp
+
 #8) Reportar talleres cuyo nombre contenga el string ‘taller’, se deberá informar nombre, direccion y
 telefono. El resultado deberá estar ordenado por nombre y dirección descendentemente. (Funciono en la página, pero sin el UPPER)
 
