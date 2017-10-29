@@ -1,16 +1,10 @@
 #6) Reportar DNI, apellido, nombre y fecha de nacimiento de empleados con reparaciones durante 2017. (No funciona en el motor no mySQL)
 
-SELECT DISTINCT 
-	Empleado.dni, Empleado.apellido, Empleado.nombre, Empleado.fechaNac 
-FROM 
-	Empleado
-JOIN
-	Reparacion r
-ON 
-	Empleado.nroEmp = Reparacion.nroEmp
-WHERE
-	Reparacion.fecha LIKE '2017%'
-
+SELECT DISTINCT dni, apellido, nombre, fechaNac
+FROM empleado e
+INNER JOIN reparacion r
+ON r.nroEmp = e.nroEmp
+WHERE r.fecha BETWEEN '2017-01-01' AND '2017-12-31'
 
 
 #8) Reportar talleres cuyo nombre contenga el string ‘taller’, se deberá informar nombre, direccion y
